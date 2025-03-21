@@ -1,0 +1,20 @@
+$button-dark: (
+    default: (
+        color: var(--color-white),
+        border-color: var(--color-background-contrast-themed),
+        background-color: var(--color-background-contrast-themed),
+        fill: var(--color-white),
+    ),
+    hover: (
+        color: var(--color-white),
+        border-color: var(--color-accent),
+        background-color: var(--color-accent),
+        fill: var(--color-white),
+    ),
+    active: (
+        color: var(--color-white),
+        border-color: var(--color-accent-second),
+        background-color: var(--color-accent-second),
+        fill: var(--color-white),
+    ),
+)

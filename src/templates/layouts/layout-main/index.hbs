@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+{{> head layout.head }}
+  <body>
+    <div id="app">
+      {{> header header-layout=layout.header }}
+
+      {{#if layout.breadcrumbs }}
+        {{> breadcrumbs layout.breadcrumbs }}
+      {{/if}}
+
+      <!-- main content -->
+      <main>
+        {{> @partial-block }}
+      </main>
+
+
+      {{> footer footer-layout=layout.footer }}
+
+      <!-- scripts -->
+      <script type="module" src="{{ layout.script-src }}"></script>
+    </div>
+  </body>
+</html>

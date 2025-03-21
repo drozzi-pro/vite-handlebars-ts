@@ -1,0 +1,11 @@
+@mixin size($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin text-crop-base {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+}

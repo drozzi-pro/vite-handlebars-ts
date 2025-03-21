@@ -1,0 +1,7 @@
+@use "breakpoints";
+
+:export {
+  @each $breakpoint, $value in breakpoints.$breakpoints-min {
+    #{$breakpoint}: #{$value}
+  }
+}

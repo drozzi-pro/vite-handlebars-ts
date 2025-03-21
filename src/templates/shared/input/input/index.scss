@@ -1,0 +1,123 @@
+@use "sass:map";
+
+.input {
+  width: 100%;
+  row-gap: 4px;
+
+  &.input--lg {
+    .input__main {
+      padding: 15px 17px;
+    }
+  }
+
+  &.input--md {
+    .input__main {
+      padding: 13px 15px;
+    }
+  }
+
+  &.input--sm {
+    .input__main {
+      padding: 9px 11px;
+    }
+  }
+
+  &.input--sm-md {
+    .input__main {
+      padding: 9px 11px;
+    }
+
+    @media (min-width: map.get($breakpoints-min, lg)) {
+      padding: 13px 15px;
+    }
+  }
+
+  &.input--pr {
+    .input__main {
+      padding-right: 40px;
+    }
+  }
+
+  &.input--pl {
+    .input__main {
+      padding-left: 40px;
+    }
+  }
+
+  .input__main {
+    display: block;
+    width: 100%;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #22272E;
+    background-color: var(--color-background-secondary);
+    border: 1px solid var(--color-stroke-primary);
+    border-radius: 8px;
+    transition: border var(--transition-default), margin-bottom var(--transition-default);
+
+    &:hover,
+    &:focus-visible {
+      outline: none;
+      border: 1px solid var(--color-stroke-secondary);
+    }
+
+    &:focus {
+      outline: none;
+      border: 1px solid var(--color-stroke-accent);
+    }
+  }
+
+  &__wrapper {
+    position: relative;
+  }
+
+  &__icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &-left {
+      left: 16px;
+    }
+
+    &-right {
+      right: 16px;
+      padding: unset;
+      border: unset;
+      background-color: unset;
+      cursor: pointer;
+
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  .input__main {
+    color: #22272E;
+    transition: color var(--transition-default), background-color var(--transition-default), border var(--transition-default);
+
+    &::placeholder {
+      color: #8C959F;
+    }
+  }
+
+  &.error {
+    .input__main {
+      background-color: var(--color-error-light);
+      border: 1px solid var(--color-error);
+    }
+  }
+
+  textarea {
+    resize: vertical;
+  }
+}
+

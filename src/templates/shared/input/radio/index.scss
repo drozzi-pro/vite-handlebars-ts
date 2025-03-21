@@ -1,0 +1,47 @@
+@use "sass:map";
+
+.radio {
+  @extend .__flex;
+  align-items: flex-start;
+  column-gap: map.get($sizes, 2.5);
+
+  &__icon {
+    display: block;
+    position : relative;
+    input {
+      position : absolute;
+      width : 0;
+      height : 0;
+      opacity: 0;
+    }
+
+    svg {
+      display: block;
+
+      &.checked {
+        display: none;
+      }
+    }
+
+    input:checked {
+      & ~ svg {
+        &.default {
+          display: none;
+        }
+        &.checked {
+          display: block;
+        }
+      }
+    }
+  }
+
+  &__text {
+    @extend .__flex-column;
+    row-gap: map.get($sizes, 1);
+  }
+}
+
+.radio-group {
+  @extend .__flex-column;
+  row-gap: map.get($sizes, 6);
+}

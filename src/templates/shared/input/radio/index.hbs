@@ -1,0 +1,13 @@
+<label class="radio">
+  <span class="radio__icon">
+    <input type="radio" name="{{name}}" {{set-checked checked}} {{set-disabled disabled}} aria-label="{{text}}">
+    {{> svg id="radio" class="default icon-lg"}}
+    {{> svg id="radio-checked" class="checked icon-lg"}}
+  </span>
+  <span class="radio__text">
+    <span class="text-lg font-600">{{text}}</span>
+    {{#if description }}
+      <span class="text-sm text-gray font-500">{{description}}</span>
+    {{/if}}
+  </span>
+</label>

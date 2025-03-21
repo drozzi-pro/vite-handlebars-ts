@@ -1,0 +1,21 @@
+{{#if url }}
+  <a class="button-{{size}} button--{{variant}} {{class}}" href="{{ url }}" {{safe attributes}}>
+    {{#if icon-left}}
+      {{> svg id=icon-left }}
+    {{/if}}
+    <span>{{text}}</span>
+    {{#if icon-right}}
+      {{> svg id=icon-right }}
+    {{/if}}
+  </a>
+{{ else }}
+  <button class="button-{{size}} button--{{variant}} {{class}}" {{safe attributes}}>
+    {{#if icon-left}}
+      {{> svg id=icon-left }}
+    {{/if}}
+    <span>{{text}}</span>
+    {{#if icon-right}}
+      {{> svg id=icon-right }}
+    {{/if}}
+  </button>
+{{/if }}

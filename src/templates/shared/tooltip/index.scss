@@ -1,0 +1,122 @@
+@use "sass:map";
+
+.tooltip {
+  width : fit-content;
+  position : relative;
+  $icon-addition-size: 16px;
+
+  &.bottom-right, &.bottom-left {
+    .tooltip__text {
+      bottom: 0;
+      transform: translateY(100%);
+    }
+  }
+
+  &.bottom-right {
+    .tooltip__text {
+      right: #{$icon-addition-size};
+    }
+  }
+
+  &.bottom-left {
+    .tooltip__text {
+      left: #{$icon-addition-size};
+    }
+  }
+
+  &.bottom-center {
+    .tooltip__text {
+      left: 50%;
+      bottom: 0;
+      transform: translate(-50%, 100%);
+    }
+  }
+
+  &.top-right, &.top-left {
+    .tooltip__text {
+      top: 0;
+      transform: translateY(-100%);
+    }
+  }
+
+  &.top-right {
+    .tooltip__text {
+      right: #{$icon-addition-size};
+    }
+  }
+
+  &.top-left {
+    .tooltip__text {
+      left: #{$icon-addition-size};
+    }
+  }
+
+  &.top-center {
+    .tooltip__text {
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -100%);
+    }
+  }
+
+  &.tooltip {
+    &--md {
+      .tooltip__text {
+        min-width: 160px;
+      }
+    }
+    &--lg {
+      .tooltip__text {
+        min-width: 220px;
+      }
+    }
+  }
+
+
+  &:hover .tooltip__text,
+  .tooltip__button:focus-visible + .tooltip__text {
+    opacity: 1;
+    z-index : 8;
+    width : auto;
+    height : auto;
+    visibility: visible;
+  }
+
+  &__button {
+    background-color : transparent;
+    margin : 0;
+    border: none;
+    cursor: pointer;
+    padding : map.get($sizes, 1);
+    display: block;
+
+    svg {
+      display: block;
+      fill: var(--color-icon-accent);
+      transition: opacity var(--transition-default);
+    }
+
+    &:hover,
+    &:focus-visible {
+      svg {
+        opacity: .7;
+      }
+    }
+  }
+
+  &__text {
+    opacity: 0;
+    visibility: hidden;
+    width : 0;
+    height : 0;
+    z-index : -1;
+    position : absolute;
+    user-select: none;
+    padding : map.get($sizes, 3) map.get($sizes, 4);
+    border-radius: 8px;
+    box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.14);
+    background-color : var(--color-white);
+    overflow: hidden;
+    transition: opacity .3s;
+  }
+}

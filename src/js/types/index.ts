@@ -1,0 +1,1 @@
+export type Nullable<T, Check extends boolean = true> = [true] extends [Check] ? T | null : T;

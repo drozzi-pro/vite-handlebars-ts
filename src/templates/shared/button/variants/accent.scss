@@ -1,0 +1,20 @@
+$button-accent: (
+    default: (
+        color: var(--color-white),
+        border-color: var(--color-accent),
+        background-color: var(--color-accent),
+        fill: var(--color-white),
+    ),
+    hover: (
+        color: var(--color-accent),
+        border-color: var(--color-accent),
+        background-color: var(--color-white),
+        fill: var(--color-accent),
+    ),
+    active: (
+        color: var(--color-white),
+        border-color: var(--color-accent-second),
+        background-color: var(--color-accent-second),
+        fill: var(--color-white),
+    ),
+)

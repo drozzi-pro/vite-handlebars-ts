@@ -1,0 +1,48 @@
+:root {
+	--color-white                : #FFFFFF;
+
+	--color-accent-450           : #17AFBF;
+	--color-accent-500           : #19C3D3;
+	--color-accent-900           : #DBF6F8;
+
+	--color-neutral-100          : #16181D;
+	--color-neutral-400          : #5A6272;
+	--color-neutral-500          : #707A8F;
+	--color-neutral-700          : #A9AFBC;
+	--color-neutral-950          : #F1F2F4;
+	--color-neutral-970          : #F7F7F7;
+
+	--color-negative-100         : #FEEAE6;
+	--color-negative-600         : #F05F42;
+
+	--color-positive-450         : #22C33D;
+	--color-positive-950         : #E9FBEC;
+
+	--color-whatsapp             : #25CF43;
+
+	--color-error                : var(--color-negative-600);
+	--color-success              : var(--color-positive-450);
+
+	--color-text-primary         : var(--color-neutral-100);
+	--color-text-secondary       : var(--color-neutral-500);
+	--color-text-tertiary        : var(--color-neutral-700);
+	--color-text-contrast        : var(--color-white);
+	--color-text-accent          : var(--color-accent-500);
+
+	--color-background-primary   : var(--color-white);
+	--color-background-secondary : var(--color-neutral-970);
+	--color-background-tertiary  : var(--color-accent-900);
+	--color-background-accent    : var(--color-accent-500);
+	--color-background-error     : var(--color-negative-100);
+	--color-background-success   : var(--color-positive-950);
+
+	--color-icon-primary         : var(--color-neutral-100);
+	--color-icon-secondary       : var(--color-neutral-500);
+	--color-icon-accent          : var(--color-accent-500);
+	--color-icon-contrast        : var(--color-white);
+	--color-icon-negative        : var(--color-negative-600);
+
+	--color-stroke-primary       : var(--color-neutral-950);
+	--color-stroke-contrast      : var(--color-neutral-400);
+	--color-stroke-accent        : var(--color-accent-500);
+}

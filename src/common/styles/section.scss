@@ -1,0 +1,12 @@
+.section {
+	margin-top    : var(--sections-indent);
+	margin-bottom : var(--sections-indent);
+
+	&-first {
+		margin-bottom : var(--sections-indent);
+	}
+
+	&-last {
+		margin-top : var(--sections-indent);
+	}
+}

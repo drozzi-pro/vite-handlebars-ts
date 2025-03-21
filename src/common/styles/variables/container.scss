@@ -1,0 +1,25 @@
+@use "sass:map";
+@use "src/settings/styles/breakpoints/breakpoints";
+
+html {
+	--container-width-maximal : 1920px;
+	--container-padding       : 16px;
+	--container-width         : calc(100vw - var(--container-padding) * 2);
+	--container-outer-indent  : calc((100vw - var(--container-width)) / 2);
+
+	@media (min-width : map.get(breakpoints.$breakpoints-min, md)) {
+		--container-width : map.get(breakpoints.$breakpoints-min, md);
+	}
+
+	@media (min-width : map.get(breakpoints.$breakpoints-min, lg)) {
+		--container-width : map.get(breakpoints.$breakpoints-min, lg);
+	}
+
+	@media (min-width : map.get(breakpoints.$breakpoints-min, xl)) {
+		--container-width : map.get(breakpoints.$breakpoints-min, xl);
+	}
+
+	@media (min-width : map.get(breakpoints.$breakpoints-min, xxl)) {
+		--container-width : map.get(breakpoints.$breakpoints-min, xxl);
+	}
+}

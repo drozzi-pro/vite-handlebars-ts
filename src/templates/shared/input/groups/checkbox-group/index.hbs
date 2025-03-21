@@ -1,0 +1,8 @@
+<div class="checkbox-group">
+  <span class="checkbox-group__title text-xl font-700">{{title}}</span>
+  <div class="checkbox-group__items">
+    {{#each items}}
+      {{> checkbox name=../this.name }}
+    {{/each}}
+  </div>
+</div>

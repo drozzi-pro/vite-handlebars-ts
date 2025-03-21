@@ -1,0 +1,16 @@
+$button-slim: (
+        default: (
+                font-weight: 500,
+                color: var(--color-blue),
+                background-color: transparent,
+                fill: var(--color-blue),
+                border: none,
+        ),
+        hover: (
+                color: var(--color-accent),
+                fill: var(--color-accent),
+        ),
+        active: (
+                transform : unset,
+        ),
+)

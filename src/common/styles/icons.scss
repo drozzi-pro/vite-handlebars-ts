@@ -1,0 +1,18 @@
+@use "/src/settings/styles/mixins";
+
+.icon {
+	&-sm {
+		display : block;
+		@include mixins.size(16);
+	}
+
+	&-md {
+		display : block;
+		@include mixins.size(24);
+	}
+
+	&-lg {
+		display : block;
+		@include mixins.size(32);
+	}
+}

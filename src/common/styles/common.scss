@@ -1,0 +1,17 @@
+html {
+	scroll-behavior : smooth;
+}
+
+body {
+	overflow-x : hidden;
+
+	&.no-scroll,
+	&.modal-open {
+		overflow-y    : hidden;
+		padding-right : var(--scrollbar-width);
+	}
+}
+
+#app {
+	position : relative;
+}

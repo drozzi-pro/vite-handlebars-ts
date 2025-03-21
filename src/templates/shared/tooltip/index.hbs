@@ -1,0 +1,8 @@
+<div class="tooltip {{or position "bottom-right"}} {{#if size}}tooltip--{{size}}{{else}}tooltip--md{{/if}}">
+  <button class="tooltip__button">
+    {{> svg id="help-circle" class="icon-lg"}}
+  </button>
+  <div class="tooltip__text">
+    {{text}}
+  </div>
+</div>

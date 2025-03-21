@@ -1,0 +1,14 @@
+<div class="range">
+  {{#if title}}
+    <span class="range__title text-xl font-700">{{title}}</span>
+  {{/if}}
+  <div class="range__inputs font-500">
+    <input class="range__input-from" type="number" name="{{name}}_from" value="{{from}}" aria-label="{{title}} изменить от">
+    <input class="range__input-to" type="number" name="{{name}}_to" value="{{to}}" aria-label="{{title}} изменить до">
+  </div>
+  <div class="range__slider">
+    <div class="range__trek"></div>
+    <input class="range__slider-from" type="range" min="{{min}}" max="{{max}}" value="{{from}}" aria-label="{{title}} изменить от">
+    <input class="range__slider-to" type="range" min="{{min}}" max="{{max}}" value="{{to}}" aria-label="{{title}} изменить до">
+  </div>
+</div>

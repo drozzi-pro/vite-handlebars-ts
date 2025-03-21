@@ -1,0 +1,67 @@
+@use "sass:map";
+
+$text-sizes    : (
+    heading: (
+        lg: (
+            line-height: .8,
+            font-size: ( min: 40, max: 56 ),
+            letter-spacing: -1.2px,
+        ),
+        md: (
+            line-height: 1.05,
+            font-size: ( min: 32, max: 48 ),
+            letter-spacing: -0.96px
+        ),
+    ),
+    title: (
+        md: (
+            line-height: 1.05,
+            font-size: ( min: 24, max: 32 ),
+            letter-spacing: -0.96px
+        ),
+        sm: (
+            line-height: 1.2,
+            font-size: ( min: 18, max: 24 ),
+            letter-spacing: -0.72px
+        ),
+    ),
+    text: (
+        xl: (
+            line-height: 1.3,
+            font-size: ( min: 16, max: 18 ),
+        ),
+        lg: (
+            line-height: 1.5,
+            font-size: ( min: 14, max: 16 ),
+        ),
+        md: (
+            line-height: 1.5,
+            font-size: 14px,
+        ),
+        sm: (
+            line-height: 1.3,
+            font-size: 12px,
+        ),
+    )
+);
+
+$fonts-weights : (
+    extralight: 200,
+    light: 300,
+    regular: 400,
+    medium: 500,
+    semibold: 600,
+    bold: 700,
+    extrabold: 800,
+);
+
+$typography : (
+    line-height: 1.5,
+    text-color: var(--color-dark),
+    title-font-weght: map.get($fonts-weights, 'medium'),
+    redactor-elem-margin-bottom: 8px,
+    title-margin-bottom: 16px,
+    list-padding-left: 20px
+);
+
+$text-crop-lines: (2);

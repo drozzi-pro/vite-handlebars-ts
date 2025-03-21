@@ -1,0 +1,14 @@
+@use "sass:map";
+@use "src/settings/styles/breakpoints/breakpoints";
+
+html {
+	--header-height               : 56px;
+	--scrollbar-width             : 0;
+	--sections-indent             : 56px;
+	--swiper-images-1-slide-width : 0;
+
+	@media (min-width : map.get(breakpoints.$breakpoints-min, lg)) {
+		--header-height   : 80px;
+		--sections-indent : 96px;
+	}
+}

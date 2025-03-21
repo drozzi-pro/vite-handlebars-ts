@@ -1,0 +1,20 @@
+$button-light : (
+    default: (
+        color: var(--color-accent),
+        border-color: var(--color-accent),
+        background-color: transparent,
+        fill: var(--color-accent),
+    ),
+    hover: (
+        color: var(--color-white),
+        border-color: var(--color-accent),
+        background-color: var(--color-accent),
+        fill: var(--color-white),
+    ),
+    active: (
+        color: var(--color-white),
+        border-color: var(--color-accent-second),
+        background-color: var(--color-accent-second),
+        fill: var(--color-white),
+    ),
+)

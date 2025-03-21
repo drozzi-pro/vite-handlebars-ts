@@ -1,0 +1,35 @@
+<div class="__flex-column input input--{{or input-size "md"}} {{#if icon-left}}input--pl{{/if}} {{#if icon-right}}input--pr{{/if}} {{#if error}}error{{/if}} {{class}}">
+  <label class="input__label">
+    {{#if label-text}}
+      <span class="text-sm font-500 text-gray">{{label-text}}</span>
+    {{/if}}
+    <div class="input__wrapper">
+      {{#if (str-equals type "textarea")}}
+        <textarea class="input__main" rows="{{or rows "5"}}" maxlength="{{or maxlength "200"}}"
+          {{#if id}}id="{{id}}" {{/if}}
+          {{#if name}}name="{{name}}" {{/if}}
+          {{#if placeholder}}placeholder="{{placeholder}}" {{/if}}></textarea>
+      {{else}}
+        <input class="input__main"
+          {{#if id}}id="{{id}}" {{/if}}
+          {{#if type}}type="{{type}}" {{/if}}
+          {{#if name}}name="{{name}}" {{/if}}
+          {{#if placeholder}}placeholder="{{placeholder}}"{{/if}}
+        >
+      {{/if}}
+
+      {{#if icon-left}}
+        <img class="input__icon input__icon-left" src="{{icon-left}}" alt="">
+      {{/if}}
+
+      {{#if icon-right}}
+        <button class="input__icon input__icon-right">
+          {{#if icon-right}}
+            {{> svg id=icon-right }}
+          {{/if}}
+        </button>
+      {{/if}}
+    </div>
+  </label>
+</div>
+

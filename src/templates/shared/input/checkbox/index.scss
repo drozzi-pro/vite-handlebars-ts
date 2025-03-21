@@ -1,0 +1,93 @@
+@use "sass:map";
+
+.checkbox {
+  @extend .__flex-center-y;
+  cursor      : pointer;
+  user-select : none;
+  column-gap  : map.get($sizes, 2);
+  width       : fit-content;
+
+  &__icon {
+    display  : block;
+    position : relative;
+
+    svg {
+      width  : 24px;
+      height : 24px;
+      fill   : var(--color-icon-tertiary);
+    }
+
+    input {
+      width    : 100%;
+      height   : 100%;
+      position : absolute;
+      opacity  : 0;
+      cursor   : pointer;
+
+      &:disabled ~ svg {
+        fill : var(--color-icon-disabled);
+      }
+
+      &:not(:disabled):hover ~ svg,
+      &:not(:disabled):checked ~ svg {
+        fill : var(--color-icon-accent);
+      }
+
+      &:not(:disabled):focus ~ svg,
+      &:not(:disabled):checked:focus ~ svg {
+        fill : var(--color-accent-second);
+      }
+
+      & ~ svg {
+        &.checked {
+          display : none;
+        }
+
+        &.default {
+          display : block;
+        }
+      }
+
+      &:checked ~ svg {
+        &.checked {
+          display : block;
+        }
+
+        &.default {
+          display : none;
+        }
+      }
+    }
+
+    &--dark {
+      input {
+        &:not(:disabled):hover ~ svg,
+        &:not(:disabled):checked ~ svg {
+          fill : var(--color-icon-primary);
+        }
+
+        &:not(:disabled):focus ~ svg,
+        &:not(:disabled):checked:focus ~ svg {
+          fill : var(--color-icon-primary);
+        }
+      }
+
+    }
+  }
+}
+
+.checkbox-group {
+  &__title {
+    display       : block;
+    margin-bottom : map.get($sizes, 4);
+  }
+
+  &__items {
+    padding-top : map.get($sizes, 4);
+    border-top  : 1px solid var(--color-stroke-primary);
+
+    & > *:not(:last-child) {
+      margin-bottom : map.get($sizes, 3);
+    }
+  }
+}

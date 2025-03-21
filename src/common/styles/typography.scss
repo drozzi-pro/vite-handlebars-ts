@@ -1,0 +1,190 @@
+@use "sass:map";
+@use "sass:meta";
+@use "/src/settings/styles/settings";
+@use "/src/settings/styles/functions";
+@use "/src/settings/styles/mixins";
+
+body {
+  font-family: Manrope, sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  line-height: 1.5;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+
+  &:not(:last-child) {
+    margin-bottom: 8px;
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+
+  &:not(.link-reset) {
+    transition: color .15s;
+
+    svg {
+      transition: fill .15s;
+    }
+
+    &:hover {
+      color: var(--color-text-accent);
+
+      svg {
+        fill: var(--color-text-accent);
+      }
+    }
+  }
+}
+
+ul, ol {
+  &.list-reset {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    list-style-position: inside;
+  }
+
+  &:not(.list-reset) {
+    padding-inline-start: map.get(settings.$typography, list-padding-start);
+    margin-block: map.get(settings.$typography, paragraph-margin-bottom);
+
+    li {
+      &:not(:last-child) {
+        margin-bottom: map.get(settings.$typography, paragraph-margin-bottom);
+      }
+    }
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  font-weight: map.get(settings.$typography, font-weight-title);
+  margin-bottom: map.get(settings.$typography, title-margin-bottom);
+}
+
+.heading {
+  &-lg {
+    line-height: 1;
+    letter-spacing: -1.44px;
+    font-weight: 700;
+    font-size: functions.getClamp(32, 64);
+  }
+
+  &-md {
+    line-height: 1;
+    letter-spacing: -1.1px;
+    font-weight: 600;
+    font-size: functions.getClamp(24, 48);
+
+    @media (min-width: map.get(settings.$breakpoints-min, lg)) {
+      font-weight: 700;
+    }
+  }
+}
+
+.title {
+  &-xxl {
+    line-height: 1;
+    letter-spacing: -1.1px;
+    font-size: functions.getClamp(32, 56);
+  }
+
+  &-xl {
+    line-height: 1;
+    letter-spacing: -1.1px;
+    font-size: functions.getClamp(24, 48);
+  }
+
+  &-lg {
+    line-height: 1.2;
+    letter-spacing: -0.96px;
+    font-size: functions.getClamp(24, 32);
+  }
+
+  &-md {
+    line-height: 1.3;
+    letter-spacing: -0.24px;
+    font-size: functions.getClamp(18, 24);
+  }
+
+  &-sm {
+    line-height: 1.2;
+    letter-spacing: -0.2px;
+    text-transform: uppercase;
+    font-size: functions.getClamp(18, 20);
+  }
+}
+
+.text {
+  &-xl {
+    line-height: 1.5;
+    font-size: functions.getClamp(16, 18);
+  }
+
+  &-lg {
+    line-height: 1.3;
+    font-size: 16px;
+  }
+
+  &-md {
+    line-height: 1.5;
+    font-size: 14px;
+  }
+
+  &-sm {
+    line-height: 1.3;
+    font-size: 12px;
+  }
+
+  &-no-wrap {
+    white-space: nowrap;
+  }
+
+  &-uppercase {
+    text-transform: uppercase;
+  }
+
+  &-center {
+    text-align: center;
+  }
+
+  &-gray {
+    color: var(--color-text-tertiary);
+  }
+}
+
+@each $name, $value in settings.$fonts-weights {
+  .font-#{$name} {
+    font-weight: #{$value};
+  }
+}
+
+@each $text-style, $text-size in settings.$text-sizes {
+  .#{$text-style} {
+    @each $size-name, $size-value in $text-size {
+      &-#{$size-name} {
+        @each $style-name, $style-value in map.get($text-size, $size-name) {
+          @if meta.type-of($style-value) == 'map' {
+            @if functions.map-has-value($style-value, 'min') and functions.map-has-value($style-value, 'max') {
+              #{$style-name}: functions.getClamp(map.get($style-value, 'min'), map.get($style-value, 'max'));
+            }
+          } @else {
+            #{$style-name}: #{$style-value};
+          }
+        }
+      }
+    }
+  }
+}
+
+@each $line in settings.$text-crop-lines {
+  .text-crop-#{$line} {
+    @include mixins.text-crop-base;
+    -webkit-line-clamp : #{$line};
+  }
+}
